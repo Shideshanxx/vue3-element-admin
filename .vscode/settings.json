@@ -1,0 +1,38 @@
+{
+  "editor.formatOnType": true,
+  "editor.formatOnSave": true,
+  "[vue]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "http.proxyAuthorization": "false",
+  "editor.tabSize": 2,
+  "editor.formatOnPaste": true,
+  "editor.guides.bracketPairs": "active",
+  "files.autoSave": "afterDelay",
+  "git.confirmSync": false,
+  "workbench.startupEditor": "newUntitledFile",
+  "editor.suggestSelection": "first",
+  "editor.acceptSuggestionOnCommitCharacter": false,
+  "css.lint.propertyIgnoredDueToDisplay": "ignore",
+  "editor.quickSuggestions": {
+    "other": true,
+    "comments": true,
+    "strings": true
+  },
+  "files.associations": {
+    "editor.snippetSuggestions": "top"
+  },
+  "[css]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+
+  "editor.codeActionsOnSave": {
+    // 保存时使用eslint自动校验
+    "source.fixAll.eslint": true,
+    // 保存时使用stylelint格式化样式
+    "source.fixAll.stylelint": true
+  },
+  // stylelint校验的文件格式
+  "stylelint.validate": ["css", "less", "vue", "html"],
+  "iconify.excludes": ["el"]
+}
