@@ -3,6 +3,7 @@
   "compilerOptions": {
     "target": "esnext", // 指定生成目标语言的版本
     "module": "esnext", // 指定生成代码的模板标准: 'commonjs', 'amd', 'system', 'umd' or 'es2015'
+    "moduleResolution": "Node", // 模块解析策略，ts默认用node的解析策略，即相对的方式导入
     "strict": false, // 严格模式
     "jsx": "preserve", // 指定 jsx 代码的生成: 'preserve', 'react-native', or 'react'
     "importHelpers": true, // 从 tslib 导入辅助工具函数
@@ -11,26 +12,33 @@
     "skipLibCheck": true,
     "esModuleInterop": true, // 允许export = 导出，由import from 导入
     "isolatedModules": true, // 将每个文件做为单独的模块
+    "allowSyntheticDefaultImports": true, // 允许从没有设置默认导出的模块中默认导入。
     "forceConsistentCasingInFileNames": true,
     "sourceMap": true, // 生成相应的 '.map' 文件
+    "baseUrl": ".", // 解析非相对模块的基地址，默认是当前目录
     "allowJs": false, // 允许编译 javascript 文件
     "resolveJsonModule": true,
     "lib": ["dom", "esnext"], // TS需要引用的库，即声明文件，es5 默认引用dom、es5、scripthost,如需要使用es的高级版本特性，通常都需要配置，如es8的数组新特性需要引入"ES2019.Array"
     "incremental": true, // TS编译器在第一次编译之后会生成一个存储编译信息的文件，第二次编译会在第一次的基础上进行增量编译，可以提高编译的速度
-
-    /* 模块解析选项 */
-    "moduleResolution": "Node", // 模块解析策略，ts默认用node的解析策略，即相对的方式导入
-    "baseUrl": ".", // 解析非相对模块的基地址，默认是当前目录
+    // 模块名到基于 baseUrl 的路径映射的列表
     "paths": {
       "@/*": ["src/*"],
       "@build/*": ["build/*"]
-    }, // 模块名到基于 baseUrl 的路径映射的列表
-    "types": ["node", "vite/client"], // 需要额外加载的声明文件包
-    "typeRoots": ["./node_modules/@types/", "./types"], // 声明类型声明的文件列表，默认是node_modules/@types
-    "allowSyntheticDefaultImports": true // 允许从没有设置默认导出的模块中默认导入。
+    },
+    // 需要额外加载的声明文件包
+    "types": [
+      "node",
+      "vite/client",
+      "element-plus/global",
+      "@pureadmin/table/volar",
+      "@pureadmin/descriptions/volar",
+      "unplugin-vue-define-options/macros-global"
+    ],
+    "typeRoots": ["./node_modules/@types/", "./types"] // 声明类型声明的文件列表，默认是node_modules/@types
   },
   // 编译器需要编译的文件或目录
   "include": [
+    "mock/*.ts",
     "src/**/*.ts",
     "src/**/*.tsx",
     "src/**/*.vue",

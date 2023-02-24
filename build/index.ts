@@ -1,8 +1,6 @@
-/**
- * 处理环境变量
- */
+/** 处理环境变量 */
 const warpperEnv = (envConf: Recordable): ViteEnv => {
-  // 默认值
+  /** 此处为默认值 */
   const ret: ViteEnv = {
     VITE_PORT: 8848,
     VITE_PUBLIC_PATH: "",
@@ -10,7 +8,7 @@ const warpperEnv = (envConf: Recordable): ViteEnv => {
     VITE_CDN: false,
     VITE_COMPRESSION: "none"
   };
-  // 处理envConf，修改默认值
+
   for (const envName of Object.keys(envConf)) {
     let realName = envConf[envName].replace(/\\n/g, "\n");
     realName =
@@ -26,7 +24,7 @@ const warpperEnv = (envConf: Recordable): ViteEnv => {
       process.env[envName] = JSON.stringify(realName);
     }
   }
-  // 返回新的环境变量
   return ret;
 };
+
 export { warpperEnv };

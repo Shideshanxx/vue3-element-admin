@@ -4,7 +4,6 @@
   "[vue]": {
     "editor.defaultFormatter": "esbenp.prettier-vscode"
   },
-  "http.proxyAuthorization": "false",
   "editor.tabSize": 2,
   "editor.formatOnPaste": true,
   "editor.guides.bracketPairs": "active",
@@ -34,5 +33,6 @@
   },
   // stylelint校验的文件格式
   "stylelint.validate": ["css", "less", "vue", "html"],
-  "iconify.excludes": ["el"]
+  "iconify.excludes": ["el"],
+  "json.schemaDownload.enable": false
 }
