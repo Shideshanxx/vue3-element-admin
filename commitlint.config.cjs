@@ -11,16 +11,16 @@ module.exports = {
       2,
       "always",
       [
-        "feat",
-        "fix",
+        "feat", // 新特性
+        "fix", // 修改问题
         "perf",
-        "style",
-        "docs",
-        "test",
-        "refactor",
+        "style", // 代码格式修改
+        "docs", // 文档修改
+        "test", // 测试用例修改
+        "refactor", // 代码重构
         "build",
         "ci",
-        "chore",
+        "chore", // 其他修改, 比如构建流程, 依赖管理
         "revert",
         "wip",
         "workflow",
